@@ -8,9 +8,14 @@ import {
     CardHeader,
     Card,
     CardBody,
+    CardTitle,
     Progress,
     TabContent,
     TabPane,
+    DropdownToggle,
+    DropdownItem,
+    DropdownMenu,
+    Pagination, PaginationItem, PaginationLink
 } from 'reactstrap';
 
 import PageTitle from '../../../Layout/AppMain/PageTitle';
@@ -40,6 +45,8 @@ import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
 import avatar2 from '../../../assets/utils/images/avatars/2.jpg';
 import avatar3 from '../../../assets/utils/images/avatars/3.jpg';
 import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
+import reconcile from '../../../assets/utils/images/reconcile.png';
+import pending from '../../../assets/utils/images/pending.png';
 
 
 const data = [
@@ -149,7 +156,7 @@ export default class AnalyticsDashboard1 extends Component {
                                 </div>
                             </Col>
                             <Col md="3">
-                                <div className="card mb-3 bg-night-white widget-chart card-border">
+                                <div className="card mb-2 bg-night-white widget-chart card-border">
                                     <div className="widget-chart-content text-dark">
                                         <div className="widget-subheading">
                                             Total Transaction Value
@@ -159,9 +166,9 @@ export default class AnalyticsDashboard1 extends Component {
                                         </div>
                                     </div>
                                     <div className="monitor-chart-wrapper">
-                                        <ResponsiveContainer margin-left= '23' width='25%' aspect={3.0 / 1.0}>
+                                        <ResponsiveContainer margin={{left: 20}} width='25%' aspect={3.0 / 1.0}>
                                             <LineChart data={data}
-                                                        margin={{top: 30, right: 5, left: 10, bottom: 0}}>
+                                                        margin={{top: 0, right: 5, left: 10, bottom: 0}}>
                                                 <Line type='monotone' dataKey='pv' stroke='#0c78f3' strokeWidth={3}/>
                                             </LineChart>
                                         </ResponsiveContainer>
@@ -706,31 +713,32 @@ export default class AnalyticsDashboard1 extends Component {
                                 </div>
                             </div>
                         </div> */}
-                        {/* <Row>
+                        <Row>
                             <Col md="12">
                                 <Card className="main-card mb-3">
-                                    <div className="card-header">Active Users
-                                        <div className="btn-actions-pane-right">
-                                            <div role="group" className="btn-group-sm btn-group">
-                                                <button className="active btn btn-info">Last Week</button>
-                                                <button className="btn btn-info">All Month</button>
-                                            </div>
+                                    <div className="card-header">
+                                        Showing
+                                        <span style={{marginLeft: 20, marginRight: 20, color: '#1382ec'}}>20</span>
+                                        <div>
+                                            out of 500 payments      
                                         </div>
+
+                                        <div></div>
                                     </div>
+                                    
                                     <div className="table-responsive">
-                                        <table className="align-middle mb-0 table table-borderless table-striped table-hover">
+                                        <table style={{ backgroundColor: '#fff'}} className="align-middle mb-0 table table-borderless table-striped">
                                             <thead>
-                                            <tr>
-                                                <th className="text-center">#</th>
-                                                <th>Name</th>
-                                                <th className="text-center">City</th>
-                                                <th className="text-center">Status</th>
-                                                <th className="text-center">Actions</th>
+                                            <tr style={{marginLeft: 20, backgroundColor: '#f7f8f8'}}>
+                                                <th>Item Type</th>
+                                                <th className="text-center">Price</th>
+                                                <th className="text-center">Transaction No</th>
+                                                <th className="text-center">Time</th>
+                                                <th className="text-center">Actions</th> 
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td className="text-center text-muted">#345</td>
+                                            <tr style={{backgroundColor: '#fff', marginTop: '30'}}>
                                                 <td>
                                                     <div className="widget-content p-0">
                                                         <div className="widget-content-wrapper">
@@ -740,105 +748,88 @@ export default class AnalyticsDashboard1 extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
-                                                                <div className="widget-heading">John Doe</div>
-                                                                <div className="widget-subheading opacity-7">Web Developer</div>
+                                                                <div className="text-left">Apple Mac Book 15" 250 SSD 12GB</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td className="text-center">Madrid</td>
+                                                <td className="text-center">$73430</td>
                                                 <td className="text-center">
-                                                    <div className="badge badge-warning">Pending</div>
+                                                    <div className="text-center">123456</div>
                                                 </td>
                                                 <td className="text-center">
-                                                    <button type="button" className="btn btn-primary btn-sm">Details</button>
+                                                    <div className="text-center">12:00</div>
+                                                </td>
+                                                <td className="text-center" style={{marginTop: 70}}>
+                                                    <button type="button" className="btn btn-primary btn-sm" style={{marginRight: 10, borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#0cd369'}}>
+                                                        <img style={{marginRight: 10, marginBottom: 1}} width={10} className="rounded-circle" src={reconcile} alt="reconcile" />
+                                                        Reconciled
+                                                    </button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td className="text-center text-muted">#347</td>
+
+                                            <tr style={{backgroundColor: '#fff', marginTop: '30'}}>
                                                 <td>
                                                     <div className="widget-content p-0">
                                                         <div className="widget-content-wrapper">
                                                             <div className="widget-content-left mr-3">
                                                                 <div className="widget-content-left">
-                                                                    <img width={40} className="rounded-circle" src={avatar3} alt="Avatar" />
+                                                                    <img width={40} className="rounded-circle" src={avatar4} alt="Avatar" />
                                                                 </div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
-                                                                <div className="widget-heading">Ruben Tillman</div>
-                                                                <div className="widget-subheading opacity-7">Etiam sit amet orci eget</div>
+                                                                <div className="text-left">Apple Mac Book 15" 250 SSD 12GB</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td className="text-center">Berlin</td>
+                                                <td className="text-center">$73430</td>
                                                 <td className="text-center">
-                                                    <div className="badge badge-success">Completed</div>
+                                                    <div className="text-center">123456</div>
                                                 </td>
                                                 <td className="text-center">
-                                                    <button type="button" className="btn btn-primary btn-sm">Details</button>
+                                                    <div className="text-center">12:00</div>
+                                                </td>
+                                                <td className="text-center" style={{marginTop: 70}}>
+                                                    <button type="button" className="btn btn-warning btn-sm" style={{borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#ec8d13'}}>
+                                                        <img style={{marginRight: 10, marginBottom: 1}} width={10} className="rounded-circle" src={pending} alt="pending" />
+                                                        Pending
+                                                    </button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td className="text-center text-muted">#321</td>
-                                                <td>
-                                                    <div className="widget-content p-0">
-                                                        <div className="widget-content-wrapper">
-                                                            <div className="widget-content-left mr-3">
-                                                                <div className="widget-content-left">
-                                                                    <img width={40} className="rounded-circle" src={avatar2} alt="Avatar" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="widget-content-left flex2">
-                                                                <div className="widget-heading">Elliot Huber</div>
-                                                                <div className="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="text-center">London</td>
-                                                <td className="text-center">
-                                                    <div className="badge badge-danger">In Progress</div>
-                                                </td>
-                                                <td className="text-center">
-                                                    <button type="button" className="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="text-center text-muted">#55</td>
-                                                <td>
-                                                    <div className="widget-content p-0">
-                                                        <div className="widget-content-wrapper">
-                                                            <div className="widget-content-left mr-3">
-                                                                <div className="widget-content-left">
-                                                                    <img width={40} className="rounded-circle" src={avatar1} alt="Avatar" /></div>
-                                                            </div>
-                                                            <div className="widget-content-left flex2">
-                                                                <div className="widget-heading">Vinnie Wagstaff</div>
-                                                                <div className="widget-subheading opacity-7">UI Designer</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="text-center">Amsterdam</td>
-                                                <td className="text-center">
-                                                    <div className="badge badge-info">On Hold</div>
-                                                </td>
-                                                <td className="text-center">
-                                                    <button type="button" className="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
+                                            
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div className="d-block text-center card-footer">
-                                        <button className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i className="pe-7s-trash btn-icon-wrapper"> </i></button>
-                                        <button className="btn-wide btn btn-success">Save</button>
-                                    </div>
+                                    <CardBody className="widget-content-right">
+                                        <Pagination className="widget-content-right" aria-label="Page navigation example">
+                                            <PaginationItem>
+                                                <PaginationLink style={{color: '#222'}} previous href="javascript:void(0);">
+                                                    Previous
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                            <PaginationItem active>
+                                                <PaginationLink href="javascript:void(0);">
+                                                    1
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                            <PaginationItem >
+                                                <PaginationLink href="javascript:void(0);">
+                                                    2
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                            <PaginationItem>
+                                                <PaginationLink style={{color: '#222'}} next href="javascript:void(0);">
+                                                    Next
+                                                </PaginationLink>
+                                            </PaginationItem>
+                                        </Pagination>
+                                    </CardBody>
                                 </Card>
                             </Col>
                         </Row>
-                        <Row>
+                       
+                        {/* <Row>
                             <Col md="4">
                                 <div className="card mb-3 widget-chart">
                                     <div className="widget-chart-content">
