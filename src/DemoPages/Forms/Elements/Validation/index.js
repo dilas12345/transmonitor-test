@@ -31,7 +31,7 @@ class FormElementsValidation extends React.Component {
             <Fragment>
                 <PageTitle
                     heading="Form Validation"
-                    subheading="Inline validation is very easy to implement using the ArchitectUI."
+                    subheading="Inline validation is very easy to implement using the TransMonitor-test."
                     icon="lnr-picture text-danger"
                 />
                 <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>

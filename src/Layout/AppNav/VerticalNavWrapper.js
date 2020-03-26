@@ -12,7 +12,7 @@ class Nav extends Component {
     render() {
         return (
             <Fragment>
-                <h5 className="app-sidebar__heading">Generate Invoice</h5>
+                <button style={{color: '#fff', borderRadius: 14, marginTop: 20}} className="btn btn-success app-sidebar__heading">Generate Invoice</button>
                 {/* <div className="metismenu vertical-nav-menu">
                     <ul className="metismenu-container">
                         <li className="metismenu-item">
@@ -23,16 +23,16 @@ class Nav extends Component {
                         </li>
                     </ul>
                 </div> */}
-                <h5 className="app-sidebar__heading">Main</h5>
-                <MetisMenu content={MainNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
-                <h5 className="app-sidebar__heading">Payments</h5>
-                {/* <MetisMenu content={ComponentsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/> */}
-                <h5 className="app-sidebar__heading">Orders</h5>
-                {/* <MetisMenu content={WidgetsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/> */}
+                <h5 className="app-sidebar__heading text-dark">Main</h5>
+                <MetisMenu content={MainNav} activeLinkFromLocation className="vertical-nav-menu text-dark" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+                <h5 className="app-sidebar__heading text-dark">Payments</h5>
+                <MetisMenu content={ComponentsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+                <h5 className="app-sidebar__heading text-dark">Orders</h5>
+                <MetisMenu content={WidgetsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
                 {/* <h5 className="app-sidebar__heading">Forms</h5> */}
                 {/* <MetisMenu content={FormsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/> */}
-                {/* <h5 className="app-sidebar__heading">Charts</h5> */}
-                {/* <MetisMenu content={ChartsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/> */}
+                <h5 className="app-sidebar__heading text-dark">Charts</h5>
+                <MetisMenu content={ChartsNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
             </Fragment>
         );
     }

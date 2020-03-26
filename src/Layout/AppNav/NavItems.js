@@ -1,13 +1,13 @@
 export const MainNav = [
     {
-        icon: 'pe-7s-rocket',
+        icon: 'pe-7s-timer',
         label: 'Over view',
         to: '#/dashboards/basic',
     },
 ];
 export const ComponentsNav = [
     {
-        icon: 'pe-7s-diamond',
+        icon: 'pe-7s-wallet',
         label: 'Elements',
         content: [
             {
@@ -46,8 +46,8 @@ export const ComponentsNav = [
         ],
     },
     {
-        icon: 'pe-7s-car',
-        label: 'Components',
+        icon: 'pe-7s-notebook',
+        label: 'Reconciled Payments',
         content: [
             {
                 label: 'Tabs',
@@ -81,7 +81,12 @@ export const ComponentsNav = [
     },
     {
         icon: 'pe-7s-display2',
-        label: 'Regular Tables',
+        label: 'Un Reconciled Payments',
+        to: '#/tables/regular-tables',
+    },
+    {
+        icon: 'pe-7s-cash',
+        label: 'Manual Settlements',
         to: '#/tables/regular-tables',
     },
 ];

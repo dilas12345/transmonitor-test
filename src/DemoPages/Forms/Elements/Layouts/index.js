@@ -37,7 +37,7 @@ class FormElementsLayouts extends React.Component {
             <Fragment>
                 <PageTitle
                     heading="Form Layouts"
-                    subheading="Build whatever layout you need with our ArchitectUI framework."
+                    subheading="Build whatever layout you need with our TransMonitor-test."
                     icon="pe-7s-graph text-success"
                 />
                 <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>

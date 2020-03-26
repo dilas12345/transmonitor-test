@@ -15,13 +15,22 @@ import {
     DropdownToggle,
     DropdownItem,
     DropdownMenu,
-    Pagination, PaginationItem, PaginationLink
+    Pagination, PaginationItem, PaginationLink,
+    Input, Form, FormGroup,
 } from 'reactstrap';
+
+import ModalBackdrop from '../../Components/Modal/Examples/ModalBackdrop';
 
 import PageTitle from '../../../Layout/AppMain/PageTitle';
 
+import LineExample2 from '../../../DemoPages/Charts/ChartJs/Examples/line2';
+
+import { AreaChart } from 'reaviz';
+
+
 import {
-    AreaChart, Area, Line,
+    // AreaChart, 
+    Area, Line,
     ResponsiveContainer,
     Bar,
     BarChart,
@@ -116,11 +125,7 @@ export default class AnalyticsDashboard1 extends Component {
                     transitionEnter={false}
                     transitionLeave={false}>
                     <div>
-                        {/* <PageTitle
-                            heading="Basic Dashboard"
-                            subheading="This is an example dashboard created using build-in elements and components."
-                            icon="pe-7s-car icon-gradient bg-mean-fruit"
-                        /> */}
+                       
                         <Row>
                             <Col md="3">
                                 <div className="card mb-3 bg-night-white  widget-chart text-dark card-border">
@@ -176,555 +181,113 @@ export default class AnalyticsDashboard1 extends Component {
                                 </div>
                             </Col>
                         </Row>
-                        {/* <Row>
-                            <Col md="12" lg="6">
-                                <Card className="mb-3">
-                                    <CardHeader className="card-header-tab">
-                                        <div className="card-header-title">
-                                            <i className="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                                            Bandwidth Reports
-                                        </div>
-                                        <div className="btn-actions-pane-right">
-                                            <Button outline
-                                                    className={"border-0 btn-pill btn-wide btn-transition " + classnames({active: this.state.activeTab1 === '11'})}
-                                                    color="primary" onClick={() => {
-                                                this.toggle1('11');
-                                            }}>Tab 1</Button>
-                                            <Button outline
-                                                    className={"ml-1 btn-pill btn-wide border-0 btn-transition " + classnames({active: this.state.activeTab1 === '22'})}
-                                                    color="primary" onClick={() => {
-                                                this.toggle1('22');
-                                            }}>Tab 2</Button>
-                                        </div>
-                                    </CardHeader>
-                                    <TabContent activeTab={this.state.activeTab1}>
-                                        <TabPane tabId="11">
-                                            <CardBody className="pt-2">
-                                                <Row className="mt-3">
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            63%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Generated Leads
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="danger"
-                                                                        value="63"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            32%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Submitted Tickers
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="success"
-                                                                        value="32"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Row>
-                                                <div className="divider mt-4"/>
-                                                <Row>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            71%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Server Allocation
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="primary"
-                                                                        value="71"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            41%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Generated Leads
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="warning"
-                                                                        value="41"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Row>
-                                            </CardBody>
-                                            <div className="widget-chart p-0">
-                                                <div className="widget-chart-content">
-                                                    <div className="widget-description mt-0 text-warning">
-                                                        <FontAwesomeIcon icon={faArrowLeft}/>
-                                                        <span className="pl-1">175.5%</span>
-                                                        <span className="text-muted opacity-8 pl-1">increased server resources</span>
-                                                    </div>
-                                                </div>
-                                                <ResponsiveContainer height={187}>
-                                                    <AreaChart data={data} margin={{top: -45, right: 0, left: 0, bottom: 0}}>
-                                                        <defs>
-                                                            <linearGradient id="colorPv2" x1="0" y1="0" x2="0" y2="1">
-                                                                <stop offset="10%" stopColor="var(--warning)" stopOpacity={0.7}/>
-                                                                <stop offset="90%" stopColor="var(--warning)" stopOpacity={0}/>
-                                                            </linearGradient>
-                                                        </defs>
-                                                        <Tooltip/>
-                                                        <Area type='monotoneX' dataKey='uv' stroke='var(--warning)' strokeWidth={2} fillOpacity={1}
-                                                              fill="url(#colorPv2)"/>
-                                                    </AreaChart>
-                                                </ResponsiveContainer>
-                                            </div>
-                                        </TabPane>
-                                        <TabPane tabId="22">
-                                            <div className="widget-chart p-0">
-                                                <ResponsiveContainer height={179}>
-                                                    <ComposedChart data={data2}>
-                                                        <CartesianGrid stroke="#ffffff"/>
-                                                        <Area type="monotone" dataKey="amt" fill="#f7ffd0" stroke="#85a200"/>
-                                                        <Bar dataKey="pv" barSize={16} fill="var(--primary)"/>
-                                                        <Line type="monotone" dataKey="uv" strokeWidth="3" stroke="var(--danger)"/>
-                                                    </ComposedChart>
-                                                </ResponsiveContainer>
-                                                <div className="widget-chart-content mt-3 mb-2">
-                                                    <div className="widget-description mt-0 text-success">
-                                                        <FontAwesomeIcon icon={faArrowUp}/>
-                                                        <span className="pl-2 pr-2">37.2%</span>
-                                                        <span className="text-muted opacity-8">performance increase</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <CardBody className="pt-2">
-                                                <Row>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            23%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Deploys
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="warning"
-                                                                        value="23"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            76%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Traffic
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="info"
-                                                                        value="76"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Row>
-                                                <div className="divider mt-4"/>
-                                                <Row>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            83%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Servers Load
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="danger"
-                                                                        value="83"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                    <Col md="6">
-                                                        <div className="widget-content">
-                                                            <div className="widget-content-outer">
-                                                                <div className="widget-content-wrapper">
-                                                                    <div className="widget-content-left mr-3">
-                                                                        <div className="widget-numbers fsize-3 text-muted">
-                                                                            48%
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="widget-content-right">
-                                                                        <div className="text-muted opacity-6">
-                                                                            Reported Bugs
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="widget-progress-wrapper mt-1">
-                                                                    <Progress
-                                                                        className="progress-bar-sm progress-bar-animated-alt"
-                                                                        color="alternate"
-                                                                        value="48"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Row>
+                        <Row>
+                            <Col md="6">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>Today: 5, Aug 2018</CardTitle>
+                                        <LineExample2/>
+                                        {/* <AreaChart
+                                            height={324}
+                                            width={800}
+                                            data={[
+                                            { key: new Date('1/30/2018'), data: 1 },
+                                            { key: new Date('2/29/2018'), data: 12 },
+                                            { key: new Date('3/13/2018'), data: 10 },
+                                            { key: new Date('5/11/2018'), data: 5 },
+                                            { key: new Date('6/16/2018'), data: 6 },
+                                            { key: new Date('7/12/2018'), data: 3 },
+                                            { key: new Date('8/15/2018'), data: 2 },
+                                            { key: new Date('8/30/2018'), data: 1 },
 
-                                            </CardBody>
-                                        </TabPane>
-                                    </TabContent>
+                                            { key: new Date('9/30/2018'), data: 7 },
+                                            { key: new Date('10/23/2018'), data: 9 },
+                                            { key: new Date('10/30/2018'), data: 9 },
+
+                                            { key: new Date('11/30/2018'), data: 7 },
+                                            { key: new Date('12/1/2018'), data: 10 },
+                                            ]}
+                                        /> */}
+                                    </CardBody>
                                 </Card>
-                                <Row>
-                                    <Col lg="6">
-                                        <div className="card mb-3 widget-chart">
-                                            <div className="widget-chart-content">
-                                                <div className="icon-wrapper rounded-circle">
-                                                    <div className="icon-wrapper-bg bg-primary"/>
-                                                    <i className="lnr-cog text-primary"/>
-                                                </div>
-                                                <div className="widget-numbers">
-                                                    45.8k
-                                                </div>
-                                                <div className="widget-subheading">
-                                                    Total Views
-                                                </div>
-                                                <div className="widget-description text-success">
-                                                    <FontAwesomeIcon icon={faAngleUp}/>
-                                                    <span className="pl-1">175.5%</span>
-                                                </div>
-                                            </div>
-                                            <div className="widget-chart-wrapper chart-wrapper-relative">
-                                                <ResponsiveContainer height={100}>
-                                                    <LineChart data={data}
-                                                               margin={{top: 5, right: 5, left: 5, bottom: 0}}>
-                                                        <Line type='monotone' dataKey='pv' stroke='#3ac47d'
-                                                              strokeWidth={3}/>
-                                                    </LineChart>
-                                                </ResponsiveContainer>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col lg="6">
-                                        <div className="card mb-3 widget-chart">
-                                            <div className="widget-chart-content">
-                                                <div className="icon-wrapper rounded-circle">
-                                                    <div className="icon-wrapper-bg bg-danger"/>
-                                                    <i className="lnr-laptop-phone text-danger"/>
-                                                </div>
-                                                <div className="widget-numbers">
-                                                    5.82k
-                                                </div>
-                                                <div className="widget-subheading">
-                                                    Reports Submitted
-                                                </div>
-                                                <div className="widget-description text-danger">
-                                                    <FontAwesomeIcon icon={faAngleDown}/>
-                                                    <span className="pl-1">54.1%</span>
-                                                </div>
-                                            </div>
-                                            <div className="widget-chart-wrapper chart-wrapper-relative">
-                                                <ResponsiveContainer height={100}>
-                                                    <BarChart data={data}>
-                                                        <Bar dataKey='uv' fill='#81a4ff' stroke='#3f6ad8' strokeWidth={2}/>
-                                                    </BarChart>
-                                                </ResponsiveContainer>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
                             </Col>
-                            <Col md="12" lg="6">
-                                <Row>
-                                    <Col md="6">
-                                        <div className="card mb-3 bg-arielle-smile widget-chart text-white card-border">
-                                            <div className="icon-wrapper rounded-circle">
-                                                <div className="icon-wrapper-bg bg-white opacity-10"/>
-                                                <i className="lnr-cog icon-gradient bg-arielle-smile"/>
+                            
+                                <Col md="6">
+                                    <Card className="main-card mb-3">
+                                        <div className="card mb-3 widget-chart card-hover-shadow-2x">
+                                            <div style={{fontWeight: 'bold'}} className="widget-heading text-left">
+                                                Orders
                                             </div>
-                                            <div className="widget-numbers">
-                                                87,4
+                                            <Progress className="progress-bar-xs" multi>
+                                                <Progress bar color="success" value="80" />
+                                                <Progress bar color="warning" value="20" />
+                                            </Progress>
+
+                                            <div style={{fontWeight: '20', marginTop: 10}} className="widget-subheading text-left">
+                                                Pending Orders <span style={{fontWeight: 'bold', color: '#ef8810'}}>20</span>
                                             </div>
-                                            <div className="widget-subheading">
-                                                Reports Generated
+                                            <div style={{marginTop: 10}}className="widget-subheading text-left">
+                                                Reconciled Orders <span style={{fontWeight: 'bold', color: '#1ed501'}}>80</span>
                                             </div>
-                                            <div className="widget-description text-white">
-                                                <FontAwesomeIcon icon={faAngleUp}/>
-                                                <span className="pl-1">54.9%</span>
+                                            <div style={{marginTop: 10}} className="widget-subheading text-left">
+                                                Total Orders <span style={{fontWeight: 'bold', color: '#5638c7'}}>100</span>
                                             </div>
+                                            
                                         </div>
-                                    </Col>
-                                    <Col md="6">
-                                        <div className="card mb-3 bg-midnight-bloom widget-chart text-white card-border">
-                                            <div className="icon-wrapper rounded">
-                                                <div className="icon-wrapper-bg bg-white opacity-10"/>
-                                                <i className="lnr-screen icon-gradient bg-warm-flame"/>
+                                    </Card>
+                                    <Card className="main-card mb-3">
+                                    <div className="card mb-3 widget-chart card-hover-shadow-2x">
+                                            <div style={{fontWeight: 'bold'}} className="widget-heading text-left">
+                                                Payments
                                             </div>
-                                            <div className="widget-numbers">
-                                                17.2k
+                                            <Progress className="progress-bar-xs" multi>
+                                                <Progress bar color="success" value="80" />
+                                                <Progress bar color="warning" value="20" />
+                                            </Progress>
+
+                                            <div style={{fontWeight: '20', marginTop: 10}} className="widget-subheading text-left">
+                                                Un-Reconciled Payments <span style={{fontWeight: 'bold', color: '#ef8810'}}>20</span>
                                             </div>
-                                            <div className="widget-subheading">
-                                                Profiles
+                                            <div style={{marginTop: 10}}className="widget-subheading text-left">
+                                                Reconciled Payments <span style={{fontWeight: 'bold', color: '#1ed501'}}>80</span>
                                             </div>
-                                            <div className="widget-description text-white">
-                                                <span className="pr-1">62,7%</span>
-                                                <FontAwesomeIcon icon={faArrowLeft}/>
+                                            <div style={{marginTop: 10}} className="widget-subheading text-left">
+                                                Total Payments <span style={{fontWeight: 'bold', color: '#5638c7'}}>100</span>
                                             </div>
+                                            
                                         </div>
-                                    </Col>
-                                    <Col md="6">
-                                        <div className="card mb-3 bg-grow-early widget-chart text-white card-border">
-                                            <div className="icon-wrapper rounded">
-                                                <div className="icon-wrapper-bg bg-dark opacity-9"/>
-                                                <i className="lnr-graduation-hat text-white"/>
-                                            </div>
-                                            <div className="widget-numbers">
-                                                63.2k
-                                            </div>
-                                            <div className="widget-subheading">
-                                                Bugs Fixed
-                                            </div>
-                                            <div className="widget-description text-white">
-                                                <FontAwesomeIcon icon={faArrowRight}/>
-                                                <span className="pl-1">72.1%</span>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col md="6">
-                                        <div className="card mb-3 bg-love-kiss widget-chart card-border">
-                                            <div className="widget-chart-content text-white">
-                                                <div className="icon-wrapper rounded-circle">
-                                                    <div className="icon-wrapper-bg bg-white opacity-4"/>
-                                                    <i className="lnr-cog"/>
-                                                </div>
-                                                <div className="widget-numbers">
-                                                    45.8k
-                                                </div>
-                                                <div className="widget-subheading">
-                                                    Total Views
-                                                </div>
-                                                <div className="widget-description">
-                                                    <FontAwesomeIcon className="text-white opacity-5" icon={faAngleUp}/>
-                                                    <span className="text-white">175.5%</span>
-                                                </div>
-                                            </div>
-                                            <div className="widget-chart-wrapper">
-                                                <ResponsiveContainer width='100%' aspect={3.0 / 1.0}>
-                                                    <LineChart data={data}
-                                                               margin={{top: 0, right: 5, left: 5, bottom: 0}}>
-                                                        <Line type='monotone' dataKey='pv' stroke='#ffffff' strokeWidth={3}/>
-                                                    </LineChart>
-                                                </ResponsiveContainer>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                <div className="card mb-3 widget-chart">
-                                    <div className="widget-chart-content">
-                                        <div className="icon-wrapper rounded-circle">
-                                            <div className="icon-wrapper-bg bg-warning"/>
-                                            <i className="lnr-heart icon-gradient bg-premium-dark"> </i>
-                                        </div>
-                                        <div className="widget-numbers">
-                                            4517.82
-                                        </div>
-                                        <div className="widget-subheading">
-                                            Active Social Profiles
-                                        </div>
-                                        <div className="widget-description">
-                                            Down by
-                                            <span className="text-danger pl-1 pr-1">
-                                                <FontAwesomeIcon icon={faAngleDown}/>
-                                                <span className="pl-1">54.1%</span>
-                                            </span>
-                                            from 30 days ago
-                                        </div>
-                                    </div>
-                                    <div className="widget-chart-wrapper chart-wrapper-relative">
-                                        <ResponsiveContainer height={100}>
-                                            <LineChart data={data2}
-                                                       margin={{top: 0, right: 5, left: 5, bottom: 0}}>
-                                                <Line type="monotone" dataKey="pv" stroke="#d6b5ff" strokeWidth={2}/>
-                                                <Line type="monotone" dataKey="uv" stroke="#a75fff" strokeWidth={2}/>
-                                            </LineChart>
-                                        </ResponsiveContainer>
-                                    </div>
+                                    </Card>
+                                </Col>
+                        </Row>
+                        
+                        <h1>Payments</h1>
+                        <Row>
+                            <Card className="main-card mb-2">
+                    
+                                <div className="table-responsive">
+                                    <table style={{ backgroundColor: '#fff'}} className="align-middle mb-0 table table-borderless table-striped">
+
+                                    <thead>
+                                        <tr style={{marginLeft: 20, backgroundColor: '#f7f8f8'}}>
+                                            <th>Showing</th>
+                                            <th className="text-center">20</th>
+                                            <th className="text-center">out of 500 entries</th>
+                                            <th className="text-center">Time</th>
+                                            <th className="text-center">Actions</th> 
+                                        </tr>
+                                    </thead>
+                                    </table>
+                                    Showing
                                 </div>
-                            </Col>
-                        </Row> */}
-                        {/* <div className="row">
-                            <div className="col-md-6 col-lg-3">
-                                <div className="card-shadow-danger mb-3 widget-chart widget-chart2 text-left card">
-                                    <div className="widget-content">
-                                        <div className="widget-content-outer">
-                                            <div className="widget-content-wrapper">
-                                                <div className="widget-content-left pr-2 fsize-1">
-                                                    <div className="widget-numbers mt-0 fsize-3 text-danger">71%</div>
-                                                </div>
-                                                <div className="widget-content-right w-100">
-                                                    <div className="progress-bar-xs progress">
-                                                        <div className="progress-bar bg-danger" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" style={{ width: '71%' }}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="widget-content-left fsize-1">
-                                                <div className="text-muted opacity-6">Income Target</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div>
+                                    Showing
                                 </div>
-                            </div>
-                            <div className="col-md-6 col-lg-3">
-                                <div className="card-shadow-success mb-3 widget-chart widget-chart2 text-left card">
-                                    <div className="widget-content">
-                                        <div className="widget-content-outer">
-                                            <div className="widget-content-wrapper">
-                                                <div className="widget-content-left pr-2 fsize-1">
-                                                    <div className="widget-numbers mt-0 fsize-3 text-success">54%</div>
-                                                </div>
-                                                <div className="widget-content-right w-100">
-                                                    <div className="progress-bar-xs progress">
-                                                        <div className="progress-bar bg-success" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style={{ width: '54%' }}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="widget-content-left fsize-1">
-                                                <div className="text-muted opacity-6">Expenses Target</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-3">
-                                <div className="card-shadow-warning mb-3 widget-chart widget-chart2 text-left card">
-                                    <div className="widget-content">
-                                        <div className="widget-content-outer">
-                                            <div className="widget-content-wrapper">
-                                                <div className="widget-content-left pr-2 fsize-1">
-                                                    <div className="widget-numbers mt-0 fsize-3 text-warning">32%</div>
-                                                </div>
-                                                <div className="widget-content-right w-100">
-                                                    <div className="progress-bar-xs progress">
-                                                        <div className="progress-bar bg-warning" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style={{ width: '32%' }}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="widget-content-left fsize-1">
-                                                <div className="text-muted opacity-6">Spendings Target</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-3">
-                                <div className="card-shadow-info mb-3 widget-chart widget-chart2 text-left card">
-                                    <div className="widget-content">
-                                        <div className="widget-content-outer">
-                                            <div className="widget-content-wrapper">
-                                                <div className="widget-content-left pr-2 fsize-1">
-                                                    <div className="widget-numbers mt-0 fsize-3 text-info">89%</div>
-                                                </div>
-                                                <div className="widget-content-right w-100">
-                                                    <div className="progress-bar-xs progress">
-                                                        <div className="progress-bar bg-info" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style={{ width: '89%' }}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="widget-content-left fsize-1">
-                                                <div className="text-muted opacity-6">Totals Target</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
+                                    
+                            </Card>
+                        </Row>
                         <Row>
                             <Col md="12">
-                                <Card className="main-card mb-3">
-                                    <div className="card-header">
-                                        Showing
-                                        <span style={{marginLeft: 20, marginRight: 20, color: '#1382ec'}}>20</span>
-                                        <div>
-                                            out of 500 payments      
-                                        </div>
-
-                                        <div></div>
-                                    </div>
+                                <Card className="main-card mb-2">
                                     
                                     <div className="table-responsive">
                                         <table style={{ backgroundColor: '#fff'}} className="align-middle mb-0 table table-borderless table-striped">
@@ -761,7 +324,7 @@ export default class AnalyticsDashboard1 extends Component {
                                                     <div className="text-center">12:00</div>
                                                 </td>
                                                 <td className="text-center" style={{marginTop: 70}}>
-                                                    <button type="button" className="btn btn-primary btn-sm" style={{marginRight: 10, borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#0cd369'}}>
+                                                    <button type="button" className="btn btn-primary btn-sm" style={{width: 110, borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#0cd369'}}>
                                                         <img style={{marginRight: 10, marginBottom: 1}} width={10} className="rounded-circle" src={reconcile} alt="reconcile" />
                                                         Reconciled
                                                     </button>
@@ -791,8 +354,8 @@ export default class AnalyticsDashboard1 extends Component {
                                                     <div className="text-center">12:00</div>
                                                 </td>
                                                 <td className="text-center" style={{marginTop: 70}}>
-                                                    <button type="button" className="btn btn-warning btn-sm" style={{borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#ec8d13'}}>
-                                                        <img style={{marginRight: 10, marginBottom: 1}} width={10} className="rounded-circle" src={pending} alt="pending" />
+                                                    <button type="button" className="btn btn-warning btn-sm" style={{width: 110, borderRadius: 20, borderColor: '#8e9598', background: 'transparent', color: '#ec8d13'}}>
+                                                        <img style={{marginRight: 20, marginBottom: 1}} width={10} className="rounded-circle" src={pending} alt="pending" />
                                                         Pending
                                                     </button>
                                                 </td>
@@ -801,30 +364,41 @@ export default class AnalyticsDashboard1 extends Component {
                                             </tbody>
                                         </table>
                                     </div>
-                                    <CardBody className="widget-content-right">
-                                        <Pagination className="widget-content-right" aria-label="Page navigation example">
-                                            <PaginationItem>
-                                                <PaginationLink style={{color: '#222'}} previous href="javascript:void(0);">
-                                                    Previous
-                                                </PaginationLink>
-                                            </PaginationItem>
-                                            <PaginationItem active>
-                                                <PaginationLink href="javascript:void(0);">
-                                                    1
-                                                </PaginationLink>
-                                            </PaginationItem>
-                                            <PaginationItem >
-                                                <PaginationLink href="javascript:void(0);">
-                                                    2
-                                                </PaginationLink>
-                                            </PaginationItem>
-                                            <PaginationItem>
-                                                <PaginationLink style={{color: '#222'}} next href="javascript:void(0);">
-                                                    Next
-                                                </PaginationLink>
-                                            </PaginationItem>
-                                        </Pagination>
-                                    </CardBody>
+                                    <Row>
+                                        {/* <Card> */}
+                                            <div style={{ padding: 40, marginTop: 40}} className="widget-content-left mr-3">
+                                                <div className="widget-content-left">
+                                                    Showing 1 to 10 of 500 entries
+                                                </div>
+                                            </div>
+                                            {/* <CardBody style={{padding: 40, marginTop: 30, paddingLeft: 500}} className="widget-content-right text-right"> */}
+                                                <Pagination style={{padding: 40, marginTop: 30, paddingLeft: 500}} className="widget-content-right" aria-label="Page navigation example">
+                                                    <PaginationItem>
+                                                        <PaginationLink style={{color: '#222'}} previous href="javascript:void(0);">
+                                                            Previous
+                                                        </PaginationLink>
+                                                    </PaginationItem>
+                                                    <PaginationItem active>
+                                                        <PaginationLink href="javascript:void(0);">
+                                                            1
+                                                        </PaginationLink>
+                                                    </PaginationItem>
+                                                    <PaginationItem >
+                                                        <PaginationLink href="javascript:void(0);">
+                                                            2
+                                                        </PaginationLink>
+                                                    </PaginationItem>
+                                                    <PaginationItem>
+                                                        <PaginationLink style={{color: '#222'}} next href="javascript:void(0);">
+                                                            Next
+                                                        </PaginationLink>
+                                                    </PaginationItem>
+                                                </Pagination>
+                                            {/* </CardBody> */}
+                                        {/* </Card> */}
+
+                                        
+                                    </Row>
                                 </Card>
                             </Col>
                         </Row>

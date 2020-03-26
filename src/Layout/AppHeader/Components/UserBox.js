@@ -31,24 +31,26 @@ class UserBox extends React.Component {
 
     }
 
-    notify2 = () => this.toastId = toast("You don't have any new items in your calendar for today! Go out and play!", {
-        transition: Bounce,
-        closeButton: true,
-        autoClose: 5000,
-        position: 'bottom-center',
-        type: 'success'
-    });
-
 
     render() {
 
         return (
             <Fragment>
+                <div style={{ padding: 10, paddingLeft: 20, paddingTop: 25}} className="widget-heading text-left mb-2 mr-2">
+                     Support
+                </div>
+                <div style={{padding: 10, paddingRight: 20, paddingTop: 25}} className="widget-heading mb-2 mr-2">
+                    FAQ
+                </div>
+                <button style={{marginTop: 20}} className="mb-2 mr-2 btn-icon btn-icon-only btn btn-link btn-sm">
+                    <i className="pe-7s-bell btn-icon-wrapper font-size-xlg"> </i>
+                    <span className="badge badge-pill badge-primary">1</span>
+                </button>
                 <div className="header-btn-lg pr-0">
                     <div className="widget-content p-0">
                         <div className="widget-content-wrapper">
-                            <div className="widget-content-left  ml-3 header-user-info">
-                                <div className="widget-heading">
+                            <div className="widget-content-right  ml-3 header-user-info">
+                                <div className="widget-heading text-right">
                                     Hello
                                 </div>
                                 <div className="widget-subheading">
@@ -99,16 +101,6 @@ class UserBox extends React.Component {
                                     </DropdownMenu>
                                 </UncontrolledButtonDropdown>
                             </div>
-
-                            {/* <div className="widget-content-right header-user-info ml-3">
-                                <Button className="btn-shadow p-1" size="sm" onClick={this.notify2} color="info"
-                                        id="Tooltip-1">
-                                    <FontAwesomeIcon className="mr-2 ml-2" icon={faCalendarAlt}/>
-                                </Button>
-                                <UncontrolledTooltip placement="bottom" target={'Tooltip-1'}>
-                                    Click for Toastify Notifications!
-                                </UncontrolledTooltip>
-                            </div> */}
                         </div>
                     </div>
                 </div>
