@@ -1,58 +1,25 @@
 import React, {Component, Fragment} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import classnames from 'classnames';
 
 import {
     Row, Col,
-    Button,
-    CardHeader,
     Card,
     CardBody,
     CardTitle,
     Progress,
-    TabContent,
-    TabPane,
-    DropdownToggle,
-    DropdownItem,
-    DropdownMenu,
     Pagination, PaginationItem, PaginationLink,
     Input, Form, FormGroup,
 } from 'reactstrap';
 
-import ModalBackdrop from '../../Components/Modal/Examples/ModalBackdrop';
-
-import PageTitle from '../../../Layout/AppMain/PageTitle';
-
 import LineExample2 from '../../../DemoPages/Charts/ChartJs/Examples/line2';
 
-import { AreaChart } from 'reaviz';
-
-
 import {
-    // AreaChart, 
-    Area, Line,
+     Line,
     ResponsiveContainer,
-    Bar,
-    BarChart,
-    ComposedChart,
-    CartesianGrid,
-    Tooltip,
     LineChart
 } from 'recharts';
 
-import {
-    faAngleUp,
-    faArrowRight,
-    faArrowUp,
-    faArrowLeft,
-    faAngleDown
-} from '@fortawesome/free-solid-svg-icons';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
-import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
-import avatar2 from '../../../assets/utils/images/avatars/2.jpg';
-import avatar3 from '../../../assets/utils/images/avatars/3.jpg';
 import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
 import reconcile from '../../../assets/utils/images/reconcile.png';
 import pending from '../../../assets/utils/images/pending.png';
@@ -254,10 +221,9 @@ export default class AnalyticsDashboard1 extends Component {
                                         </li>
                                         </ul> out of 500 entries
                                     </div>
-                                    <div className="app-footer">
-                                        Showing
-                                        
-                                    </div>
+                                    {/* <div className="app-footer">
+                                        Search endine
+                                    </div> */}
                                     <div className="app-footer-right">
                                         <Form inline onSubmit={(e) => e.preventDefault()}>
                                             Show
@@ -271,21 +237,7 @@ export default class AnalyticsDashboard1 extends Component {
                                                 </Input>
                                             </FormGroup>
                                         </Form>
-                                        {/* <ul className="nav">
-                                            <li className="nav-item">
-                                                <a href="javascript:void(0);" className="nav-link">
-                                                    Footer Link 3
-                                                </a>
-                                            </li>
-                                            <li className="nav-item">
-                                                <a href="javascript:void(0);" className="nav-link">
-                                                    <div className="badge badge-success mr-1 ml-0">
-                                                        <small>NEW</small>
-                                                    </div>
-                                                    Footer Link 4
-                                                </a>
-                                            </li>
-                                        </ul> */}
+                                        
                                     </div>
                                 </div>
                             </div>
