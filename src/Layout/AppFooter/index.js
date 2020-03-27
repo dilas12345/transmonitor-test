@@ -11,14 +11,9 @@ class AppFooter extends React.Component {
                         <div className="app-footer-left">
                             <ul className="nav">
                                 <li className="nav-item">
-                                    <a href="javascript:void(0);" className="nav-link">
-                                        Footer Link 1
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="javascript:void(0);" className="nav-link">
-                                        Footer Link 2
-                                    </a>
+                                    <p href="javascript:void(0);" className="nav-link">
+                                        2020 copyRight TransMonitor
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -26,15 +21,12 @@ class AppFooter extends React.Component {
                             <ul className="nav">
                                 <li className="nav-item">
                                     <a href="javascript:void(0);" className="nav-link">
-                                        Footer Link 3
+                                        Powered By
                                     </a>
                                 </li>
                                 <li className="nav-item">
                                     <a href="javascript:void(0);" className="nav-link">
-                                        <div className="badge badge-success mr-1 ml-0">
-                                            <small>NEW</small>
-                                        </div>
-                                        Footer Link 4
+                                        Yusuph Dilas Che
                                     </a>
                                 </li>
                             </ul>

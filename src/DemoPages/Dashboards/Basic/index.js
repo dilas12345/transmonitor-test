@@ -129,10 +129,10 @@ export default class AnalyticsDashboard1 extends Component {
                         <Row>
                             <Col md="3">
                                 <div className="card mb-3 bg-night-white  widget-chart text-dark card-border">
-                                    <div className="widget-subheading">
+                                    <div className="widget-subheading text-left">
                                         Daily Transaction Volume
                                     </div>
-                                    <div className="monitor-content">
+                                    <div style={{fontSize: 15}} className="monitor-content text-left">
                                         2,342
                                     </div>
                                     
@@ -140,10 +140,10 @@ export default class AnalyticsDashboard1 extends Component {
                             </Col>
                             <Col md="3">
                                 <div className="card mb-3 bg-night-white widget-chart text-dark card-border">
-                                    <div className="widget-subheading">
+                                    <div className="widget-subheading text-left">
                                         Daily Transaction Value
                                     </div>
-                                    <div className="monitor-content">
+                                    <div style={{fontSize: 15}} className="monitor-content text-left">
                                         N4,000,000
                                     </div>
                                     
@@ -151,10 +151,10 @@ export default class AnalyticsDashboard1 extends Component {
                             </Col>
                             <Col md="3">
                                 <div className="card mb-3 bg-night-white widget-chart text-dark card-border">
-                                    <div className="widget-subheading">
+                                    <div className="widget-subheading text-left">
                                         Total Transaction Volume
                                     </div>
-                                    <div className="monitor-content">
+                                    <div style={{fontSize: 15}} className="monitor-content text-left">
                                         452,000
                                     </div>
                                     
@@ -163,14 +163,14 @@ export default class AnalyticsDashboard1 extends Component {
                             <Col md="3">
                                 <div className="card mb-2 bg-night-white widget-chart card-border">
                                     <div className="widget-chart-content text-dark">
-                                        <div className="widget-subheading">
+                                        <div className="widget-subheading text-left">
                                             Total Transaction Value
                                         </div>
-                                        <div className="monitor-content">
+                                        <div style={{fontSize: 15}} className="monitor-content text-left">
                                             N4,000,000
                                         </div>
                                     </div>
-                                    <div className="monitor-chart-wrapper">
+                                    <div className="monitor-chart-wrapper text-left">
                                         <ResponsiveContainer margin={{left: 20}} width='25%' aspect={3.0 / 1.0}>
                                             <LineChart data={data}
                                                         margin={{top: 0, right: 5, left: 10, bottom: 0}}>
@@ -187,27 +187,6 @@ export default class AnalyticsDashboard1 extends Component {
                                     <CardBody>
                                         <CardTitle>Today: 5, Aug 2018</CardTitle>
                                         <LineExample2/>
-                                        {/* <AreaChart
-                                            height={324}
-                                            width={800}
-                                            data={[
-                                            { key: new Date('1/30/2018'), data: 1 },
-                                            { key: new Date('2/29/2018'), data: 12 },
-                                            { key: new Date('3/13/2018'), data: 10 },
-                                            { key: new Date('5/11/2018'), data: 5 },
-                                            { key: new Date('6/16/2018'), data: 6 },
-                                            { key: new Date('7/12/2018'), data: 3 },
-                                            { key: new Date('8/15/2018'), data: 2 },
-                                            { key: new Date('8/30/2018'), data: 1 },
-
-                                            { key: new Date('9/30/2018'), data: 7 },
-                                            { key: new Date('10/23/2018'), data: 9 },
-                                            { key: new Date('10/30/2018'), data: 9 },
-
-                                            { key: new Date('11/30/2018'), data: 7 },
-                                            { key: new Date('12/1/2018'), data: 10 },
-                                            ]}
-                                        /> */}
                                     </CardBody>
                                 </Card>
                             </Col>
@@ -261,30 +240,56 @@ export default class AnalyticsDashboard1 extends Component {
                         </Row>
                         
                         <h1>Payments</h1>
-                        <Row>
-                            <Card className="main-card mb-2">
                     
-                                <div className="table-responsive">
-                                    <table style={{ backgroundColor: '#fff'}} className="align-middle mb-0 table table-borderless table-striped">
-
-                                    <thead>
-                                        <tr style={{marginLeft: 20, backgroundColor: '#f7f8f8'}}>
-                                            <th>Showing</th>
-                                            <th className="text-center">20</th>
-                                            <th className="text-center">out of 500 entries</th>
-                                            <th className="text-center">Time</th>
-                                            <th className="text-center">Actions</th> 
-                                        </tr>
-                                    </thead>
-                                    </table>
-                                    Showing
+                            <div className="app-footer">
+                                <div className="app-footer__inner">
+                                    <div className="app-footer-left">
+                                        Showing
+                                        <ul className="nav">
+                                        <li className="nav-item"> 
+                                            <a href="javascript:void(0);" className="nav-link" >
+                                                20
+                                            <i className="metismenu-icon pe-7s-angle-down"></i>
+                                            </a>
+                                        </li>
+                                        </ul> out of 500 entries
+                                    </div>
+                                    <div className="app-footer">
+                                        Showing
+                                        
+                                    </div>
+                                    <div className="app-footer-right">
+                                        <Form inline onSubmit={(e) => e.preventDefault()}>
+                                            Show
+                                            <FormGroup style={{padding: 10}}>
+                                                <Input  bsSize="sm" className="mr-1" type="select" name="backdrop" id="backdrop" onChange={this.changeBackdrop}>
+                                                <option value="true">All</option>
+                                                <option value="reconciled">Reconciled</option>
+                                                <option value="un-reconciled">Un Reconciled</option>
+                                                <option value="settled">Settled</option>
+                                                <option value="un-settled">Un Settled</option>
+                                                </Input>
+                                            </FormGroup>
+                                        </Form>
+                                        {/* <ul className="nav">
+                                            <li className="nav-item">
+                                                <a href="javascript:void(0);" className="nav-link">
+                                                    Footer Link 3
+                                                </a>
+                                            </li>
+                                            <li className="nav-item">
+                                                <a href="javascript:void(0);" className="nav-link">
+                                                    <div className="badge badge-success mr-1 ml-0">
+                                                        <small>NEW</small>
+                                                    </div>
+                                                    Footer Link 4
+                                                </a>
+                                            </li>
+                                        </ul> */}
+                                    </div>
                                 </div>
-                                <div>
-                                    Showing
-                                </div>
+                            </div>
                                     
-                            </Card>
-                        </Row>
                         <Row>
                             <Col md="12">
                                 <Card className="main-card mb-2">
@@ -364,14 +369,13 @@ export default class AnalyticsDashboard1 extends Component {
                                             </tbody>
                                         </table>
                                     </div>
-                                    <Row>
-                                        {/* <Card> */}
-                                            <div style={{ padding: 40, marginTop: 40}} className="widget-content-left mr-3">
-                                                <div className="widget-content-left">
-                                                    Showing 1 to 10 of 500 entries
-                                                </div>
+
+                                    <div className="app-footer">
+                                        <div className="app-footer__inner">
+                                            <div className="app-footer-left">
+                                                Showing 1 to 10 of 500 entries
                                             </div>
-                                            {/* <CardBody style={{padding: 40, marginTop: 30, paddingLeft: 500}} className="widget-content-right text-right"> */}
+                                            <div className="app-footer-right">
                                                 <Pagination style={{padding: 40, marginTop: 30, paddingLeft: 500}} className="widget-content-right" aria-label="Page navigation example">
                                                     <PaginationItem>
                                                         <PaginationLink style={{color: '#222'}} previous href="javascript:void(0);">
@@ -394,100 +398,12 @@ export default class AnalyticsDashboard1 extends Component {
                                                         </PaginationLink>
                                                     </PaginationItem>
                                                 </Pagination>
-                                            {/* </CardBody> */}
-                                        {/* </Card> */}
-
-                                        
-                                    </Row>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
-                       
-                        {/* <Row>
-                            <Col md="4">
-                                <div className="card mb-3 widget-chart">
-                                    <div className="widget-chart-content">
-                                        <div className="icon-wrapper rounded-circle">
-                                            <div className="icon-wrapper-bg bg-primary"/>
-                                            <i className="lnr-cog text-primary"/>
-                                        </div>
-                                        <div className="widget-numbers">
-                                            45.8k
-                                        </div>
-                                        <div className="widget-subheading">
-                                            Total Views
-                                        </div>
-                                        <div className="widget-description text-success">
-                                            <FontAwesomeIcon icon={faAngleUp}/>
-                                            <span className="pl-1">175.5%</span>
-                                        </div>
-                                    </div>
-                                    <div className="widget-chart-wrapper">
-                                        <ResponsiveContainer width='100%' aspect={3.0 / 1.0}>
-                                            <LineChart data={data}
-                                                       margin={{top: 0, right: 5, left: 5, bottom: 0}}>
-                                                <Line type='monotone' dataKey='pv' stroke='#3ac47d' strokeWidth={3}/>
-                                            </LineChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="4">
-                                <div className="card mb-3 widget-chart">
-                                    <div className="widget-chart-content">
-                                        <div className="icon-wrapper rounded-circle">
-                                            <div className="icon-wrapper-bg bg-success"/>
-                                            <i className="lnr-screen text-success"/>
-                                        </div>
-                                        <div className="widget-numbers">
-                                            17.2k
-                                        </div>
-                                        <div className="widget-subheading">
-                                            Profiles
-                                        </div>
-                                        <div className="widget-description text-warning">
-                                            <span className="pr-1">175.5%</span>
-                                            <FontAwesomeIcon icon={faArrowLeft}/>
-                                        </div>
-                                    </div>
-                                    <div className="widget-chart-wrapper">
-                                        <ResponsiveContainer width='100%' aspect={3.0 / 1.0}>
-                                            <AreaChart data={data}
-                                                       margin={{top: 0, right: 0, left: 0, bottom: 0}}>
-                                                <Area type='monotoneX' dataKey='uv' stroke='#fd7e14' fill='#ffb87d'/>
-                                            </AreaChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col md="4">
-                                <div className="card mb-3 widget-chart">
-                                    <div className="widget-chart-content">
-                                        <div className="icon-wrapper rounded-circle">
-                                            <div className="icon-wrapper-bg bg-danger"/>
-                                            <i className="lnr-laptop-phone text-danger"/>
-                                        </div>
-                                        <div className="widget-numbers">
-                                            5.82k
-                                        </div>
-                                        <div className="widget-subheading">
-                                            Reports Submitted
-                                        </div>
-                                        <div className="widget-description text-danger">
-                                            <FontAwesomeIcon icon={faAngleDown}/>
-                                            <span className="pl-1">54.1%</span>
-                                        </div>
-                                    </div>
-                                    <div className="widget-chart-wrapper">
-                                        <ResponsiveContainer width='100%' aspect={3.0 / 1.0}>
-                                            <BarChart data={data}>
-                                                <Bar dataKey='uv' fill='#81a4ff' stroke='#3f6ad8' strokeWidth={2}/>
-                                            </BarChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row> */}
                     </div>
                 </ReactCSSTransitionGroup>
             </Fragment>

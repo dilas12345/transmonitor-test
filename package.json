@@ -45,9 +45,10 @@
     "jest": "23.6.0",
     "jw-react-pagination": "^1.0.7",
     "lorem-ipsum": "^1.0.6",
+    "mdbootstrap": "^4.14.1",
     "moment": "^2.24.0",
     "namor": "^1.1.1",
-    "npm": "^6.7.0",
+    "npm": "^6.14.4",
     "object-assign": "4.1.1",
     "pe7-icon": "^1.0.4",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -106,11 +107,13 @@
     "animate-sass": "^0.8.2",
     "css-loader": "^1.0.1",
     "node-sass": "^4.10.0",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=./src node scripts/start.js",
     "build": "cross-env NODE_PATH=./src node scripts/build.js",
+    "bundle": "node node_modules/react-360/scripts/bundle.js",
     "test": "cross-env NODE_PATH=./src node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
